@@ -8,7 +8,11 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: 'Space Mono', monospace;
     background-color: ${props => props.theme.colors.background};
+  }
+
+  body, input, button {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.125rem;
   }
 `;

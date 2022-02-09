@@ -7,7 +7,7 @@ export const Container = styled.div`
     position: relative;
     width: 66px;
     height: 32px;
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.backgroundSwitch};
     border-radius: 50px;
     cursor: pointer;
 
@@ -22,11 +22,15 @@ export const Container = styled.div`
       top: 50%;
       left: 4px;
       transform: translateY(-50%);
-      background-color: ${props => props.theme.colors.secondary};
+      background-color: ${props => props.theme.colors.primary};
       height: 26px;
       width: 26px;
       border-radius: 50%;
-      transition: left 500ms cubic-bezier(1,-0.15, 0.02, 1.26);
+      transition: left 500ms cubic-bezier(1,-0.15, 0.02, 1.26),
+                  filter 200ms;
+      &:hover {
+        filter: brightness(0.9)
+      }
 
       &::before {
         content: '';
