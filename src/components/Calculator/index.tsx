@@ -11,7 +11,11 @@ import {
   Title,
   TipButtonsList,
   ResultScreenSide,
-  InputCustom
+  InputCustom,
+  TipValue,
+  TipAmout,
+  ValueText,
+  ValueBox
 
 } from './styles';
 
@@ -50,7 +54,17 @@ function Calculator() {
       </KeyboardSide>
 
       <ResultScreenSide>
-
+        <TipValue>
+          <TipAmout>
+            <ValueText>
+              <h2>Tip Amout</h2>
+              <p>/person</p>
+            </ValueText>
+            <ValueBox>
+              $0.00
+            </ValueBox>
+          </TipAmout>
+        </TipValue>
       </ResultScreenSide>
     </Container>
   );

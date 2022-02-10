@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   body {
     background-color: ${props => props.theme.colors.background};
+    padding: 0 2rem;
   }
 
   body, input, button {

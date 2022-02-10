@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   background-color: ${props => props.theme.colors.backgroundCalculator};
   border-radius: 1.5rem;
   padding: 2rem;
-  max-width: 950px;
+  max-width: 1120px;
 `;  
 
 export const KeyboardSide = styled.div`
@@ -28,18 +30,30 @@ export const TipButtonsList = styled.div`
   flex-wrap: wrap;
 `;
 
-export const ResultScreenSide = styled.div``;
-
 export const InputCustom = styled.input`
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   background-color: ${props => props.theme.colors.backgroundInput};
   outline: none;
   padding: 0.5rem;
   color: ${props => props.theme.colors.secondary};
   text-align: center;
-
+  
   &::placeholder {
     color: ${props => props.theme.colors.placeholdertInput}
   }
+  `;
+
+export const ResultScreenSide = styled.div`
+  flex: 1;
+  background-color: ${props => props.theme.colors.secondary};
+  border-radius: 1rem;
 `;
+
+export const TipValue = styled.div``;
+
+export const TipAmout = styled.div``;
+
+export const ValueText = styled.div``;
+
+export const ValueBox = styled.div``;
