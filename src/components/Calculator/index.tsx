@@ -10,7 +10,8 @@ import {
   SelectTip,
   Title,
   TipButtonsList,
-  ResultScreenSide
+  ResultScreenSide,
+  InputCustom
 
 } from './styles';
 
@@ -31,11 +32,11 @@ function Calculator() {
 
           <TipButtonsList>
             <Button>5%</Button>
-            <Button>5%</Button>
-            <Button>5%</Button>
-            <Button>5%</Button>
-            <Button>5%</Button>
-            <Button>5%</Button>
+            <Button>10%</Button>
+            <Button>15%</Button>
+            <Button>25%</Button>
+            <Button>50%</Button>
+            <InputCustom type='text' placeholder='Custom'/>
           </TipButtonsList>
         </SelectTip>
 

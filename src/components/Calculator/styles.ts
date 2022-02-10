@@ -29,3 +29,17 @@ export const TipButtonsList = styled.div`
 `;
 
 export const ResultScreenSide = styled.div``;
+
+export const InputCustom = styled.input`
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: ${props => props.theme.colors.backgroundInput};
+  outline: none;
+  padding: 0.5rem;
+  color: ${props => props.theme.colors.secondary};
+  text-align: center;
+
+  &::placeholder {
+    color: ${props => props.theme.colors.placeholdertInput}
+  }
+`;
