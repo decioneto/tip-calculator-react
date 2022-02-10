@@ -1,4 +1,5 @@
 import Input from '../Input';
+import Button from '../Buttons';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PersonIcon from '@mui/icons-material/Person';
 
@@ -29,7 +30,12 @@ function Calculator() {
           <Title>Select Tip %</Title>
 
           <TipButtonsList>
-            {/* <Button value='5' >5%</Button> */}
+            <Button>5%</Button>
+            <Button>5%</Button>
+            <Button>5%</Button>
+            <Button>5%</Button>
+            <Button>5%</Button>
+            <Button>5%</Button>
           </TipButtonsList>
         </SelectTip>
 

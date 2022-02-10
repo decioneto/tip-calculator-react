@@ -10,17 +10,22 @@ export const Container = styled.div`
 `;  
 
 export const KeyboardSide = styled.div`
-  flex: 0.5;
+  flex: 1;
 `;
 
 export const SelectTip = styled.div`
-  flex: 0.5;
+  flex: 1;
+  margin: 2.5rem 0;
 `;
 
 export const Title = styled.div`
   color: ${props => props.theme.colors.title};
 `;
 
-export const TipButtonsList = styled.div``;
+export const TipButtonsList = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
 
 export const ResultScreenSide = styled.div``;

@@ -1,11 +1,11 @@
 import React, {InputHTMLAttributes} from 'react'
 
+import { Container } from './styles'
+
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   title: string;
   icon: React.ComponentType
 }
-
-import { Container } from './styles'
 
 function Input({ title, icon:Icon, ...props }:InputProps) {
   return (
