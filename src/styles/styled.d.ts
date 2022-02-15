@@ -12,8 +12,13 @@ declare module 'styled-components' {
       backgroundButtonPrimary: string,
       backgroundButtonPrimaryHover: string,
       backgroundButtonPrimaryFocus: string,
-      colorButton: string,
-      colorButtonHover: string,
+      colorButtonPrimary: string,
+      colorButtonPrimaryHover: string,
+
+      backgroundButtonSecondary: string,
+      backgroundButtonSecondaryHover: string,
+      colorButtonSecondary: string,
+      colorButtonSecondaryHover: string,
 
       backgroundSwitch: string,
       title: string,

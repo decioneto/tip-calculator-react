@@ -4,9 +4,10 @@ import { ButtonPrimary } from './styles'
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: string;
+  isSecondary?: boolean;
 }
 
-function Button({ children }:ButtonProps) {
+function Button({ children, isSecondary, ...props }:ButtonProps) {
   const [active, setActive] = useState(false)
 
   function buttonSelected() {
@@ -14,7 +15,12 @@ function Button({ children }:ButtonProps) {
   }
 
   return (
-    <ButtonPrimary className={active ? 'active' : ''} onClick={buttonSelected}>
+    <ButtonPrimary 
+      className={active ? 'active' : ''} 
+      isSecondary={isSecondary}
+      onClick={buttonSelected}
+      {...props}
+    >
       {children}
     </ButtonPrimary>
   )

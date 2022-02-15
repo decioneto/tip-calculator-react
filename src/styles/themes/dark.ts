@@ -11,6 +11,11 @@ export default {
     backgroundButtonPrimaryFocus: '#9FE8DF',
     colorButton: '#00474B',
     colorButtonHover: '#26C0AB',
+
+    backgroundButtonSecondary: '#00474B',
+    backgroundButtonSecondaryHover: '#003235',
+    colorButtonSecondary: '#26C0AB',
+    colorButtonSecondaryHover: '#26C0AB',
     
     backgroundSwitch: '#26C0AB',
     title: '#26C0AB',

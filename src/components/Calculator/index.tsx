@@ -4,7 +4,6 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PersonIcon from '@mui/icons-material/Person';
 
 import { 
-
   Container,
   KeyboardSide,
   SelectTip,
@@ -15,8 +14,8 @@ import {
   TipValue,
   TipAmout,
   ValueText,
-  ValueBox
-
+  ValueBox,
+  ButtonsSubmit
 } from './styles';
 
 
@@ -27,12 +26,12 @@ function Calculator() {
         <Input 
           type="text"
           placeholder='0'
-          title="Bill" 
+          title="Conta" 
           icon={AttachMoneyIcon} 
         />
 
         <SelectTip>
-          <Title>Select Tip %</Title>
+          <Title>Selecionar gorgeta %</Title>
 
           <TipButtonsList>
             <Button>5%</Button>
@@ -47,7 +46,7 @@ function Calculator() {
         <Input 
           type="text"
           placeholder='0'
-          title="Number of People" 
+          title="Número de pessoas" 
           icon={PersonIcon} 
         />
 
@@ -55,15 +54,31 @@ function Calculator() {
 
       <ResultScreenSide>
         <TipValue>
+          
           <TipAmout>
             <ValueText>
-              <h2>Tip Amout</h2>
-              <p>/person</p>
+              <h2>Gorjeta</h2>
+              <p>/pessoa</p>
             </ValueText>
             <ValueBox>
               $0.00
             </ValueBox>
           </TipAmout>
+          
+          <TipAmout>
+            <ValueText>
+              <h2>Total</h2>
+              <p>/pessoa</p>
+            </ValueText>
+            <ValueBox>
+              $0.00
+            </ValueBox>
+          </TipAmout>
+
+          <ButtonsSubmit>
+            <Button isSecondary disabled>Reset</Button>
+          </ButtonsSubmit>
+        
         </TipValue>
       </ResultScreenSide>
     </Container>
