@@ -5,13 +5,20 @@ import { ButtonPrimary } from './styles'
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: string;
   isSecondary?: boolean;
+  hasFocus?: boolean;
 }
 
-function Button({ children, isSecondary, ...props }:ButtonProps) {
+function Button({ children, isSecondary, hasFocus, ...props }:ButtonProps) {
   const [active, setActive] = useState(false)
 
   function buttonSelected() {
-    setActive(!active)
+    if(hasFocus) {
+      setActive(true)
+    }
+
+    if(active) {
+      setActive(false)
+    }
   }
 
   return (
