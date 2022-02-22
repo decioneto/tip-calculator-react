@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode, useState } from 'react'
+import { ButtonHTMLAttributes, useState } from 'react'
 
 import { ButtonPrimary } from './styles'
 
@@ -9,23 +9,10 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 function Button({ children, isSecondary, hasFocus, ...props }:ButtonProps) {
-  const [active, setActive] = useState(false)
-
-  function buttonSelected() {
-    if(hasFocus) {
-      setActive(true)
-    }
-
-    if(active) {
-      setActive(false)
-    }
-  }
 
   return (
     <ButtonPrimary 
-      className={active ? 'active' : ''} 
       isSecondary={isSecondary}
-      onClick={buttonSelected}
       {...props}
     >
       {children}
