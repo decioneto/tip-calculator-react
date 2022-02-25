@@ -1,6 +1,5 @@
 import { useState, useRef, MouseEvent } from 'react';
 import Input from '../Input';
-import Button from '../Buttons';
 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PersonIcon from '@mui/icons-material/Person';
@@ -10,16 +9,16 @@ import {
   SelectTip, 
   Title, 
   TipButtonsList, 
-  InputCustom 
+  InputCustom,
+  Button
 } from './styles'
 
 function KeyboardSide() {
   const [active, setActive] = useState(false)
   const arrayValues = [5, 10, 15, 25, 50]
 
-  function buttonSelected(button: MouseEvent) {
+  function buttonSelected() {
     setActive(!active)
-    console.log(button.target)
   }
 
   return (
@@ -38,9 +37,8 @@ function KeyboardSide() {
           {arrayValues.map(value => (
             <Button 
               key={value}
-              className={active ? 'active' : ''}
-              value={value}
               onClick={buttonSelected}
+              isActive={active}
             >
               {`${value}%`}
             </Button>
