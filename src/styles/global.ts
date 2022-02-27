@@ -13,7 +13,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono', monospace !important;
     font-size: 1.125rem;
   }
 `;

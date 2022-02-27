@@ -19,55 +19,39 @@ export const Title = styled.div`
 `;
 
 export const TipButtonsList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 1rem;
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    border-radius: 0 !important;
 
-  @media(max-width: 900px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;  
-  }
-`;
-
-export const Button = styled.button<ButtonProps>`
-  padding: 0.5rem 1rem;
-  border: 0;
-  background-color: 
-  ${(props) =>
-    props.isSecondary
-        ? props.theme.colors.backgroundButtonSecondary
-        : props.theme.colors.backgroundButtonPrimary };
-    
-  color: ${(props) =>
-    props.isSecondary
-        ? props.theme.colors.colorButtonSecondary
-        : props.theme.colors.colorButtonPrimary};
-  border-radius: 0.5rem;
-  min-width: 110px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: ${(props) =>
-      props.isSecondary
-      ? props.theme.colors.backgroundButtonSecondaryHover
-      : props.theme.colors.backgroundButtonPrimaryHover};
-    color: ${(props) =>
-      props.isSecondary
-      ? props.theme.colors.colorButtonSecondaryHover
-      : props.theme.colors.colorButtonPrimaryHover};
-  }
-
-  ${(props) => {
-    if(props.isActive === true) {
-      return css`
-          background-color: ${(props) =>
-            props.theme.colors.backgroundButtonPrimaryFocus};
-          color: #00474b;
-      `
+    @media(max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;  
     }
-  }}
+   
+    button {
+      padding: 0.5rem 1rem;
+      border: 0;
+      border-radius: 0.5rem !important;
+      min-width: 110px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background-color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#26C0AB"};
+      color: ${(props) => props.theme.title === 'light' ? '#F4F4F4' : "#00474B"};
+
+      &:hover {
+        background-color: ${(props) => props.theme.title === 'light' ? '#26C0AB' : "#016A6F"};
+        color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#00474B"};
+      }
+
+      &.Mui-selected {
+        background-color: #9FE8DF;
+        color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#00474B"};
+      }
+    }
+  }
 `;
 
 export const InputCustom = styled.input`

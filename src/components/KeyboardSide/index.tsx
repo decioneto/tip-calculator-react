@@ -1,5 +1,6 @@
 import { useState, useRef, MouseEvent } from 'react';
 import Input from '../Input';
+import { ToggleButtonGroup, ToggleButton } from '@mui/material'
 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PersonIcon from '@mui/icons-material/Person';
@@ -10,15 +11,14 @@ import {
   Title, 
   TipButtonsList, 
   InputCustom,
-  Button
 } from './styles'
 
 function KeyboardSide() {
   const [active, setActive] = useState(false)
-  const arrayValues = [5, 10, 15, 25, 50]
+  // const arrayValues = [5, 10, 15, 25, 50]
 
-  function buttonSelected() {
-    setActive(!active)
+  function buttonSelected(event: MouseEvent<HTMLElement>, isActive: boolean) {
+    setActive(isActive)
   }
 
   return (
@@ -34,16 +34,19 @@ function KeyboardSide() {
         <Title>Selecionar gorgeta %</Title>
 
         <TipButtonsList>
-          {arrayValues.map(value => (
-            <Button 
-              key={value}
-              onClick={buttonSelected}
-              isActive={active}
-            >
-              {`${value}%`}
-            </Button>
-          ))}          
-          <InputCustom type='text' placeholder='Custom'/>
+          <ToggleButtonGroup
+            color='primary'
+            onChange={buttonSelected}
+            value={active}
+            exclusive
+          >
+            <ToggleButton value="5">5%</ToggleButton>
+            <ToggleButton value="10">10%</ToggleButton>
+            <ToggleButton value="15">15%</ToggleButton>
+            <ToggleButton value="25">25%</ToggleButton>
+            <ToggleButton value="50">50%</ToggleButton>
+            <InputCustom type='text' placeholder='Custom'/>
+          </ToggleButtonGroup>
         </TipButtonsList>
       </SelectTip>
 
