@@ -13,13 +13,8 @@ import {
   InputCustom,
 } from './styles'
 
-type ButtonValueProps = {
-  value: number;
-}
-
 function KeyboardSide() {
   const [active, setActive] = useState(false)
-  // const arrayValues = [5, 10, 15, 25, 50]
 
   function buttonSelected(event: MouseEvent<HTMLElement>, isActive: boolean) {
     setActive(isActive)

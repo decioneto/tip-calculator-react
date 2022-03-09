@@ -10,6 +10,10 @@ import {
 } from './styles'
 
 function ResultScreenSide() {
+  function calculate() {
+    console.log('calculei!')
+  }
+
   return (
     <Container>
       <TipValue>
@@ -35,7 +39,8 @@ function ResultScreenSide() {
           </TipAmout>
 
           <ButtonsSubmit>
-            <Button isSecondary>Limpar</Button>
+            <Button isSecondary onClick={calculate}>Calcular</Button>
+            <Button isSecondary disabled>Limpar</Button>
           </ButtonsSubmit>
         
         </TipValue>

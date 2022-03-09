@@ -38,6 +38,9 @@ export const ValueBox = styled.h3`
 `;
 
 export const ButtonsSubmit = styled.div`
+  display: flex;
+  gap: 1rem;
+
   button {
     width: 100%;
   }

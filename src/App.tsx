@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import usePesistedState from './hooks/usePersistedState'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
+import { CalculateContextProvider } from './context/CalculateContext'
 
 import Calculator from './components/Calculator'
 import Switch from './components/Switch'
@@ -20,22 +21,24 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        
-        <div className="img">
-          {theme.title === 'light' ? (
-            <img src={LogoLight} alt="Logo" />
-          ) : (
-            <img src={LogoDark} alt="Logo" />
-          )}
-        </div>
+      <CalculateContextProvider>
+        <Container>
+          
+          <div className="img">
+            {theme.title === 'light' ? (
+              <img src={LogoLight} alt="Logo" />
+            ) : (
+              <img src={LogoDark} alt="Logo" />
+            )}
+          </div>
 
-        <Calculator />
+          <Calculator />
 
-        <Switch toggleTheme ={toggleTheme} />
+          <Switch toggleTheme ={toggleTheme} />
 
-      </Container>
-      <GlobalStyle />
+        </Container>
+        <GlobalStyle />
+      </CalculateContextProvider>
     </ThemeProvider>
   )
 }
