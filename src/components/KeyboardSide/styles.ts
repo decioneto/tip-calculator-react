@@ -41,7 +41,7 @@ export const TipButtonsList = styled.div`
       background-color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#26C0AB"};
       color: ${(props) => props.theme.title === 'light' ? '#F4F4F4' : "#00474B"};
 
-      &:hover {
+      &:hover:not([aria-pressed="true"]) {
         background-color: ${(props) => props.theme.title === 'light' ? '#26C0AB' : "#016A6F"};
         color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#00474B"};
       }
@@ -49,6 +49,10 @@ export const TipButtonsList = styled.div`
       &.Mui-selected {
         background-color: #9FE8DF;
         color: ${(props) => props.theme.title === 'light' ? '#00474B' : "#00474B"};
+      }
+
+      &.Mui-selected:hover {
+        background-color: #9FE8DF;
       }
     }
   }
