@@ -1,4 +1,8 @@
+import { useContext, useState } from 'react'
+import formatAmout from '../../utils/formatAmout'
+import formatCurrency from '../../utils/formatCurrency'
 import Button from '../Buttons'
+import { CalculateContext } from '../../context/CalculateContext'
 
 import { 
   Container,
@@ -10,9 +14,31 @@ import {
 } from './styles'
 
 function ResultScreenSide() {
-  function calculate() {
-    console.log('calculei!')
+  const [totalTip, setTotalTip] = useState(0)
+  const [total, setTotal] = useState('')
+  const [isDisable, setIsDisable] = useState(true)
+
+  const { 
+    billValue,
+    tipValue,
+    customTipValue,
+    dividedBy 
+  } = useContext(CalculateContext)
+
+  function calculateTip() {
+    const formatBillValue = formatAmout(billValue)
+    const percentageTip = Number(tipValue) / 100;
+    const percentageCustomTip = Number(customTipValue) / 100;
+
+    const calculateTip = Number(formatBillValue) * percentageTip
+      setTotalTip(calculateTip)
+
   }
+
+  function calculate() {
+    calculateTip()
+    setIsDisable(false)
+  } 
 
   return (
     <Container>
@@ -24,7 +50,7 @@ function ResultScreenSide() {
               <p>/pessoa</p>
             </ValueText>
             <ValueBox>
-              $0.00
+              { formatCurrency(totalTip) }
             </ValueBox>
           </TipAmout>
           
@@ -40,7 +66,7 @@ function ResultScreenSide() {
 
           <ButtonsSubmit>
             <Button isSecondary onClick={calculate}>Calcular</Button>
-            <Button isSecondary disabled>Limpar</Button>
+            <Button isSecondary disabled={isDisable}>Limpar</Button>
           </ButtonsSubmit>
         
         </TipValue>

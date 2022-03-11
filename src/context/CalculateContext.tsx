@@ -1,12 +1,14 @@
 import { createContext, ReactNode, useState } from "react";
 
 type CalculateContextProps = {
-    billValue: number;
-    setBilLValue: React.Dispatch<React.SetStateAction<number>>;
-    tipValue: number;
-    setTipValue: React.Dispatch<React.SetStateAction<number>>;
-    dividedBy: number;
-    setDividedBy: React.Dispatch<React.SetStateAction<number>>;
+    billValue: string;
+    setBilLValue: React.Dispatch<React.SetStateAction<string>>;
+    tipValue: string;
+    setTipValue: React.Dispatch<React.SetStateAction<string>>;
+    customTipValue: string;
+    setCustomTipValue: React.Dispatch<React.SetStateAction<string>>;
+    dividedBy: string;
+    setDividedBy: React.Dispatch<React.SetStateAction<string>>;
 }
 
 type CalculateContextProviderProps = {
@@ -16,9 +18,10 @@ type CalculateContextProviderProps = {
 export const CalculateContext = createContext({} as CalculateContextProps);
 
 export function CalculateContextProvider({ children } : CalculateContextProviderProps) {
-    const [billValue, setBilLValue] = useState(0)
-    const [tipValue, setTipValue] = useState(0)
-    const [dividedBy, setDividedBy] = useState(0)
+    const [billValue, setBilLValue] = useState('')
+    const [tipValue, setTipValue] = useState('')
+    const [customTipValue, setCustomTipValue] = useState('')
+    const [dividedBy, setDividedBy] = useState('')
 
     return (
         <CalculateContext.Provider 
@@ -27,6 +30,8 @@ export function CalculateContextProvider({ children } : CalculateContextProvider
                 setBilLValue,
                 tipValue,
                 setTipValue,
+                customTipValue,
+                setCustomTipValue,
                 dividedBy,
                 setDividedBy
             }}
